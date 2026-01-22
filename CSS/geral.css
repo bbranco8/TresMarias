@@ -4,7 +4,7 @@
 html,
 body {
     margin: 0;
-    font-size: clamp(12px, 2vw, 17px);
+    font-size: clamp(12px, 1.5vw + 1vh, 17px);
     height: 100%;
 }
 
