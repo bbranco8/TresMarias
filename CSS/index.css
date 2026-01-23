@@ -109,7 +109,8 @@ main article {
 }
 
 .maria_text {
-    grid-column: 5 / span 8;
+    grid-column: 4 / span 8;
+    text-align: center;
 }
 
 .maria_item img {
@@ -215,16 +216,106 @@ main article {
     opacity: 1;
 }
 
+
+
+
 /* CORPO PERFEITO ------------------------------------------ */
 #corpo_perfeito {
     grid-column: 1 / -1;
 }
 
+.label {
+    text-align: center;
+    margin-top: 8px;
+    color: #DE71AA;
+    position: relative;
+    opacity: 0;
+}
+
+.label.cabelo {
+    grid-column: 3 / 4;
+    bottom: 28vh;
+    right: 2vh
+}
+
+.label.ombro {
+    grid-column: 5 / 6;
+    bottom: 20vh;
+    right: 8vh
+}
+
+.label.mama {
+    grid-column: 6 / 7;
+    bottom: 65vh;
+    right: 7vh
+}
+
+.label.anca {
+    grid-column: 8 / 9;
+    bottom: 20vh;
+}
+
+.label.perna {
+    grid-column: 11 / 12;
+    bottom: 55vh;
+    left: 4vh
+}
+
 #corpo_perfeito img {
     grid-column: 1 / -1;
-    grid-row: 3;
-    width: 70%;
+    grid-row: 2 / span 3;
+    width: 80%;
     margin: 0 auto;
     height: auto;
     display: block;
+    align-self: end;
+    padding-top: 15vh;
 }
+
+.circulo {
+    width: 3vh;
+    height: 3vh;
+    background-color: #DE71AA;
+    border-radius: 50%;
+    filter: blur(0.3vh);
+    position: relative;
+}
+
+.circulo:hover {
+    cursor: pointer;
+}
+
+.circulo.cabelo {
+    grid-column: 1 / 2;
+    left: 26vh;
+    top: 57vh;
+}
+
+.circulo.ombro {
+    left: 36vh;
+    top: 65vh;
+}
+
+.circulo.mama {
+    left: 36vh;
+    top: 42vh;
+}
+
+.circulo.anca {
+    left: 55vh;
+    top: 64vh;
+}
+
+.circulo.perna {
+    left: 82vh;
+    top: 46vh;
+}
+
+.circulo.cabelo:hover ~ .label.cabelo,
+.circulo.ombro:hover ~ .label.ombro,
+.circulo.mama:hover~.label.mama,
+.circulo.anca:hover~.label.anca,
+.circulo.perna:hover~.label.perna {
+    opacity: 1;
+}
+
