@@ -1,13 +1,13 @@
-// 9 linhas, 14 colunas 
+// HOMEPAGE ---------------------------------------------------------------------
 function setGridRows() {
     let header = document.querySelector('header');
     let grid = document.querySelector('.homepage_grid');
 
     let available_height = window.innerHeight - header.offsetHeight;
 
-    let num_rows = 10;       // quantas linhas você quer
-    let gap = 10;          // gap do grid em px
-    let total_gap = gap * (num_rows - 1); // espaço total ocupado pelos gaps
+    let num_rows = 10;
+    let gap = 10;
+    let total_gap = gap * (num_rows - 1);
     let rowHeight = (available_height - total_gap) / num_rows;
 
     // define altura do grid e altura de cada row
@@ -53,7 +53,7 @@ let layouts = [
     ] 
 ];
 
-let last_layout_index = -1; // armazena o último layout usado
+let last_layout_index = -1;
 
 function applyRandomLayout() {
     let images = document.querySelectorAll('.homepage_grid img');
@@ -95,4 +95,40 @@ window.addEventListener('DOMContentLoaded', initGrid);
 window.addEventListener('resize', () => {
     setGridRows();
     applyRandomLayout();
+});
+
+
+
+// MARIAS -------------------------------------------------------------
+let mariaItems = document.querySelectorAll('.maria_item');
+
+let legendasAlteradas = [
+    "Maria, <br> juíza",
+    "Maria, <br> empresária",
+    "Maria, <br> CEO",
+    "Maria, <br> mulher forte",
+    "Maria, <br> designer",
+    "Maria, <br> investigadora",
+    "Maria, <br> imparável",
+    "Maria, <br> engenheira",
+    "Maria, <br> cientista",
+    "Maria, <br> dona de si",
+    "Maria, <br> advogada",
+    "Maria, <br> respeitada",
+    "Maria, <br> cirurgiã",
+    "Maria, <br> estudante",
+];
+
+mariaItems.forEach((item, index) => {
+    let img = item.querySelector('img');
+    let legenda = item.querySelector('.legenda');
+    let texto_original = legenda.innerHTML;
+
+    img.addEventListener('mouseover', () => {
+        legenda.innerHTML = legendasAlteradas[index] || texto_original;
+    });
+
+    img.addEventListener('mouseout', () => {
+        legenda.innerHTML = texto_original;
+    });
 });

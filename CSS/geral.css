@@ -135,8 +135,6 @@ main {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     gap: 20px;
-    padding-left: 70px;
-    padding-right: 70px;
 
     overflow-y: auto;
     scroll-snap-type: y mandatory;
@@ -148,6 +146,8 @@ main article {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     gap: 0;
+    padding-left: 70px;
+        padding-right: 70px;
 
     scroll-snap-align: start;
 }

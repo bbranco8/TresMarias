@@ -119,11 +119,19 @@ main article {
     display: block;
 }
 
-.maria_item p {
-    text-align: center;
+.maria_item img { 
+    cursor: pointer;
 }
 
-.legenda {
+.maria_item p {
+    text-align: center;
     margin-top: 8px;
     font-size: 0.9em;
+    color: #DE71AA;
+}
+
+
+/* CULTURA -------------------------------------------------- */
+#cultura {
+    background-color: #DE71AA;
 }
