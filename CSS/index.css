@@ -214,3 +214,17 @@ main article {
     display: block;
     opacity: 1;
 }
+
+/* CORPO PERFEITO ------------------------------------------ */
+#corpo_perfeito {
+    grid-column: 1 / -1;
+}
+
+#corpo_perfeito img {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    display: block;
+}
