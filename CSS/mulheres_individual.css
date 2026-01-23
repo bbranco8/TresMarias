@@ -2,18 +2,11 @@ main {
     grid-row: 1 / -1;
     grid-auto-rows: 100vh;
     row-gap: 0;
+    padding: 0;
 }
 
 main article {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    column-gap: 20px;
-    row-gap: 0;
-    position: relative;
-    z-index: 0;
-
-    scroll-snap-align: start;
+    padding: 0;
 }
 
 .mulher_individual_img {

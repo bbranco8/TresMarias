@@ -1,11 +1,6 @@
-.mulheres_grid {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-auto-rows: 40vh;
-    gap: 0;
-    padding: 0px 70px;
+article {
+    grid-auto-rows: 35vh;
+    padding-top: 15vh;
 }
 
 .mulher_img {
@@ -30,7 +25,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
 }
 
 /* título */

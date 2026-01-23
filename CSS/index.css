@@ -1,26 +1,8 @@
 main article {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    height: 100vh;
-    padding: 0 70px;
-
-    scroll-snap-align: start;
+    min-height: 100vh;
 }
 
-
-/* FIRST SECTION - HOMEPAGE */
-.main_logo {
-    grid-column: 4 / 12;
-    grid-row: 1;
-    width: 100%;
-    height: auto;
-    justify-self: center;
-    position: relative;
-    top: 22%;
-    mix-blend-mode: multiply;
-}
-
+/* FIRST SECTION - HOMEPAGE ------------------------------------------------- */
 .homepage_grid {
     grid-column: 1 / -1;
     grid-row: 1;
@@ -28,8 +10,8 @@ main article {
     grid-template-columns: repeat(14, 1fr);
     grid-auto-rows: 1fr;
     gap: 10px;
+    padding-top: 15vh;
     position: relative;
-    height: 100vh;
 }
 
 .homepage_grid img {
@@ -39,80 +21,109 @@ main article {
     display: block;
 }
 
-/* MULHERES */
-#mulheres {
-    grid-auto-rows: 1fr;
+.main_logo {
+    grid-column: 4 / 12;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+    align-self: center;
+    position: relative;
+    bottom: 10vh;
 }
 
-.artigo_mulher, .links_mulheres {
-    display: contents;
+
+/* MULHERES ------------------------------------------------- */
+.artigo_mulher {
+    padding-top: 15vh;
 }
 
 .artigo_mulher img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
+    height: auto;
+    display: block;
+    opacity: 0.6;
 }
 
 .artigo_mulher h2 {
     mix-blend-mode: multiply;
 }
 
-/* Imagem 1 */
-.artigo_mulher:nth-of-type(1) img {
-    grid-column: 1 / 5;
-    grid-row: 1 / 6;
+/* TRES MARIAS */
+.artigo_mulher:first-child {
+    grid-column: span 4;
+    grid-row: 1 / 8;
 }
 
-/* Texto 1 */
-.artigo_mulher:nth-of-type(1) h2 {
-    grid-column: 2 / 6;
-    grid-row: 6 / 8;
+.artigo_mulher:first-child h2 {
+    grid-row: 3 / 8;
     position: relative;
-    bottom: 28%;
+    bottom: 7vh;
+    left: 15vh;
 }
 
-/* Imagem 2 */
-.artigo_mulher:nth-of-type(2) img {
-    grid-column: 6 / 10;
-    grid-row: 2 / 6;
-    width: 100%;
-    opacity: 0.7;
+/* ANARCHA */
+.artigo_mulher:nth-child(2) {
+    grid-column: 6 / span 4;
+    grid-row: 1 / 9;
 }
 
-/* Texto 2 */
-.artigo_mulher:nth-of-type(2) h2 {
-    grid-column: 7 / 11;
-    grid-row: 1 / 3;
-    mix-blend-mode: multiply;
+.artigo_mulher:nth-child(2) h2 {
+    grid-row: 3 / 8;
     position: relative;
-    top: 15%;
-    left: 10%;
+    top: 7vh;
+    left: 18vh;
+    z-index: 5;
 }
 
-/* Imagem 3 */
-.artigo_mulher:nth-of-type(3) img {
-    grid-column: 11 / 15;
-    grid-row: 1 / 5;
-    width: 100%;
-    opacity: 0.7;
+/* BEATRIZ */
+.artigo_mulher:nth-child(3) {
+    grid-column: 11 / span 4;
+    grid-row: 1 / 8;
 }
 
-/* Texto 3 */
-.artigo_mulher:nth-of-type(3) h2 {
-    grid-column: 11 / 14;
-    grid-row: 4 / 8;
-    mix-blend-mode: multiply;
+.artigo_mulher:nth-child(3) h2 {
+    grid-row: 3 / 8;
     position: relative;
-    top: 10%;
-    left: 10%;
+    bottom: 7vh;
+    right: 5vh;
 }
 
-/* Legenda */
-.artigo_mulher:nth-of-type(3) a {
-    grid-column: 13 / 15;
-    grid-row: 6;
-    text-align: end;
-    z-index: 10;
+
+
+
+/* MARIAS ------------------------------------------------- */
+#maria_grid {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    padding-top: 15vh;
+    align-items: start;
+}
+
+.maria_item {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.maria_text {
+    grid-column: 5 / span 8;
+}
+
+.maria_item img {
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    display: block;
+}
+
+.maria_item p {
+    text-align: center;
+}
+
+.legenda {
+    margin-top: 8px;
+    font-size: 0.9em;
 }
