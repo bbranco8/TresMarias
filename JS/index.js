@@ -121,7 +121,7 @@ let legendasAlteradas = [
 
 mariaItems.forEach((item, index) => {
     let img = item.querySelector('img');
-    let legenda = item.querySelector('.legenda');
+    let legenda = item.querySelector('.legenda.bold');
     let texto_original = legenda.innerHTML;
 
     img.addEventListener('mouseover', () => {

@@ -49,11 +49,18 @@ p {
 
 .legenda {
     font-family: "Libertinus Serif", serif;
-    font-weight: 700;
-    font-style: italic;
+    font-weight: 400;
     font-size: 1rem;
     line-height: 1.17rem;
     color: black;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
 }
 
 a h1,
