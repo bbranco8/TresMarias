@@ -287,27 +287,27 @@ main article {
 
 .circulo.cabelo {
     grid-column: 1 / 2;
-    left: 26vh;
+    left: 14vw;
     top: 57vh;
 }
 
 .circulo.ombro {
-    left: 36vh;
+    left: 19vw;
     top: 65vh;
 }
 
 .circulo.mama {
-    left: 36vh;
+    left: 19vw;
     top: 42vh;
 }
 
 .circulo.anca {
-    left: 55vh;
+    left: 30vw;
     top: 64vh;
 }
 
 .circulo.perna {
-    left: 82vh;
+    left: 43vw;
     top: 46vh;
 }
 
