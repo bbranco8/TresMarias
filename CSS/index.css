@@ -98,7 +98,7 @@ main article {
     grid-row: 1;
     display: grid;
     grid-template-columns: repeat(14, 1fr);
-    padding-top: 15vh;
+    padding-top: 17vh;
     align-items: start;
 }
 
@@ -134,4 +134,14 @@ main article {
 /* CULTURA -------------------------------------------------- */
 #cultura {
     background-color: #DE71AA;
+}
+
+.artigo_cultura {
+    padding-top: 15vh;
+    grid-column: span 6;
+}
+
+.artigo_cultura h1 {
+    color: white;
+    margin: 0;
 }

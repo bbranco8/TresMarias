@@ -43,10 +43,8 @@ p {
     font-family: "Libertinus Serif", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.2rem;
-    /* 14.4pt */
-    line-height: 1.37rem;
-    /* 16.4pt */
+    font-size: 1.2rem; /* 14.4pt */
+    line-height: 1.37rem; /* 16.4pt */
 }
 
 .legenda {
@@ -80,6 +78,14 @@ header {
     padding: 15px 70px;
     z-index: 99;
     mix-blend-mode: multiply;
+}
+
+header.white_header a h3 {
+    color: white;
+}
+
+header.white_header {
+    mix-blend-mode: normal;
 }
 
 header a {
