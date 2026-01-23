@@ -1,13 +1,7 @@
 main {
-    grid-column: 1 / -1;
     grid-row: 1 / -1;
     grid-auto-rows: 100vh;
     row-gap: 0;
-    height: 100vh;
-
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
 }
 
 main article {

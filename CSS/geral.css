@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-size: clamp(12px, 1.5vw + 1vh, 17px);
     height: 100%;
+    scroll-behavior: auto;
 }
 
 .container {
@@ -25,6 +26,20 @@ h1, h2, h3 {
     color: #DE71AA;
 }
 
+h1 {
+    font-size: 5.4rem;
+    line-height: 5.57rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+    line-height: 3.37rem;
+}
+
+h3 {
+    font-size: 1.9rem;
+}
+
 p {
     font-family: "Libertinus Serif", serif;
     font-weight: 400;
@@ -33,13 +48,13 @@ p {
     line-height: 1.37rem; /* 16.4pt */
 }
 
-h1 {
-    font-size: 5.4rem;
-    line-height: 5.57rem;
-}
-
-h3 {
-    font-size: 1.9rem;
+.legenda {
+    font-family: "Libertinus Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.17rem;
+    color: black;
 }
 
 a h1, a h2, a h3 {
@@ -116,4 +131,7 @@ main {
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     gap: 20px;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
