@@ -324,7 +324,7 @@ main article {
 
 /* NOTICIAS -------------------------------- */
 #noticias {
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 15vh repeat(8, 1fr);
 }
 
 #titulo_noticias {
@@ -332,9 +332,13 @@ main article {
     grid-row: 2;
 }
 
+#titulo_noticias h1 {
+    margin: 0;
+}
+
 .artigo_noticias {
     grid-column: span 6;
-    grid-row: 3/span 4;
+    grid-row: 4/span 4;
 }
 
 .artigo_noticias:nth-child(2) {

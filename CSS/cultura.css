@@ -157,3 +157,25 @@ main article {
     display: block;
     opacity: 1;
 }
+
+
+
+/* FILMES ----------------------------------------------- */
+#filmes {
+    grid-template-rows: 15vh repeat(8, 1fr);
+}
+
+/* Erin Brockovich */
+.artigo_filme {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 7;
+}
+
+
+/* Images */
+.artigo_filme img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+}

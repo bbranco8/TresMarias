@@ -1,6 +1,7 @@
 article {
     grid-auto-rows: 35vh;
     padding-top: 15vh;
+    column-gap: 0px;
 }
 
 .mulher_img {

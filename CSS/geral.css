@@ -164,3 +164,7 @@ main article {
 
     scroll-snap-align: start;
 }
+
+.gap {
+    column-gap: 20px;
+}
