@@ -22,7 +22,6 @@ h3 {
     font-family: 'League Gothic';
     font-weight: 400;
     text-transform: uppercase;
-    color: #DE71AA;
 }
 
 h1 {
@@ -53,7 +52,10 @@ p {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.17rem;
-    color: black;
+}
+
+.pink {
+    color: #DE71AA;
 }
 
 .bold {
