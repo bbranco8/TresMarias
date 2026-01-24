@@ -160,7 +160,7 @@ main article {
     grid-template-columns: repeat(14, 1fr);
     gap: 0;
     padding-left: 70px;
-        padding-right: 70px;
+    padding-right: 70px;
 
     scroll-snap-align: start;
 }
