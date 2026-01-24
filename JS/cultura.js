@@ -1,4 +1,4 @@
-let imagens = document.querySelectorAll('.mulheres_grid img');
+let imagens = document.querySelectorAll('.artigo_filme img');
 
   imagens.forEach(img => {
     let original = img.src;

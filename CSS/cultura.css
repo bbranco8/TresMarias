@@ -56,6 +56,51 @@ main article {
 }
 
 
+
+/* FILMES ----------------------------------------------- */
+#filmes {
+    grid-template-rows: 15vh repeat(8, 1fr);
+}
+
+.artigo_filme a {
+    position: relative;
+    display: block;
+}
+
+.artigo_filme,
+.img_title {
+    grid-column: span 2;
+    grid-row: 2 / span 5;
+}
+
+.img_title h3, .img_title p {
+    margin: 0;
+}
+
+#artigo_filme_title {
+    grid-column: 1 / -1;
+    grid-row: 7 / 10;
+    text-align: center;
+}
+
+
+/* Images */
+.artigo_filme img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+}
+
+
+/* hover */
+.artigo_filme a:hover .img_title {
+    opacity: 1;
+}
+
+
+
+
 /* LIVROS ----------------------------------------------- */
 #livros {
     grid-template-rows: 15vh repeat(8, 1fr);
@@ -153,33 +198,6 @@ main article {
 
 /* Images */
 .artigo_livro img {
-    width: 100%;
-    height: auto;
-    display: block;
-    opacity: 1;
-}
-
-
-
-/* FILMES ----------------------------------------------- */
-#filmes {
-    grid-template-rows: 15vh repeat(8, 1fr);
-}
-
-.artigo_filme {
-    grid-column: span 2;
-    grid-row: 2 / span 5;
-}
-
-#artigo_filme_title {
-    grid-column: 1 / -1;
-    grid-row: 7 / 10;
-    text-align: center;
-}
-
-
-/* Images */
-.artigo_filme img {
     width: 100%;
     height: auto;
     display: block;
