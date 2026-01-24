@@ -149,6 +149,7 @@ header a:first-child img {
     grid-column: -7 / -4;
 }
 
+/* MAIN --------------------------------------------------- */
 main {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
@@ -191,4 +192,11 @@ main article {
     text-align: center;
     opacity: 0;
     pointer-events: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
 }
