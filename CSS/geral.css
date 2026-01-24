@@ -83,7 +83,7 @@ header {
     align-items: center;
     grid-auto-flow: column;
     padding: 15px 70px;
-    z-index: 99;
+    z-index: 199;
     mix-blend-mode: multiply;
 }
 
