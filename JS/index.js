@@ -18,30 +18,30 @@ function setGridRows() {
 
 
 let layouts = [
-    /* Layout 1
+    // Layout 1
     [
-        { colStart: 2, colEnd: 4, rowStart: 1, rowEnd: 3 },
         { colStart: 2, colEnd: 5, rowStart: 7, rowEnd: 9 },
-        { colStart: 9, colEnd: 11, rowStart: 8, rowEnd: 10 },
+        { colStart: 13, colEnd: 15, rowStart: 1, rowEnd: 3 },
         { colStart: 9, colEnd: 12, rowStart: 3, rowEnd: 5 },
-        { colStart: 13, colEnd: 15, rowStart: 1, rowEnd: 3 }
-    ],*/
+        { colStart: 9, colEnd: 11, rowStart: 8, rowEnd: 10 },
+        { colStart: 2, colEnd: 4, rowStart: 1, rowEnd: 3 }
+    ], 
     
     // Layout 2
     [
-        { colStart: 1, colEnd: 3, rowStart: 8, rowEnd: 10 },
         { colStart: 3, colEnd: 6, rowStart: 1, rowEnd: 3 },
-        { colStart: 5, colEnd: 7, rowStart: 5, rowEnd: 7 },
+        { colStart: 10, colEnd: 14, rowStart: 7, rowEnd: 9 },
         { colStart: 10, colEnd: 12, rowStart: 2, rowEnd: 4 },
-        { colStart: 10, colEnd: 14, rowStart: 7, rowEnd: 9 }
+        { colStart: 5, colEnd: 7, rowStart: 5, rowEnd: 7 },
+        { colStart: 1, colEnd: 3, rowStart: 8, rowEnd: 10 },
     ],  
     // Layout 3
     [
         { colStart: 2, colEnd: 5, rowStart: 1, rowEnd: 3 },
         { colStart: 3, colEnd: 5, rowStart: 8, rowEnd: 10 },
-        { colStart: 7, colEnd: 9, rowStart: 5, rowEnd: 7 },
         { colStart: 11, colEnd: 13, rowStart: 1, rowEnd: 3 },
-        { colStart: 12, colEnd: 15, rowStart: 6, rowEnd: 8 }
+        { colStart: 12, colEnd: 15, rowStart: 6, rowEnd: 8 },
+        { colStart: 7, colEnd: 9, rowStart: 5, rowEnd: 7 }
     ], 
     // Layout 4
     [
