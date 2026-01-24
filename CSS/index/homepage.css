@@ -3,6 +3,10 @@ main article {
 }
 
 /* FIRST SECTION - HOMEPAGE ------------------------------------------------- */
+#homepage {
+    grid-template-rows: 15vh repeat(8, 1fr);
+}
+
 .homepage_grid {
     grid-column: 1 / -1;
     grid-row: 1;
@@ -23,7 +27,7 @@ main article {
 
 .main_logo {
     grid-column: 4 / 12;
-    grid-row: 1;
+    grid-row: 5;
     width: 100%;
     height: auto;
     mix-blend-mode: multiply;
