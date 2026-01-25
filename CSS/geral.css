@@ -210,6 +210,11 @@ img {
         font-size: 2.9rem;
         line-height: 3.07rem;
     }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.27rem;
+    }
 }
 
 @media(max-width: 1480px) {
@@ -226,11 +231,6 @@ img {
     h3 {
         font-size: 1.4rem;
         line-height: 1.57rem;
-    }
-
-    p {
-        font-size: 1.1rem;
-        line-height: 1.27rem;
     }
 
     .legenda {
