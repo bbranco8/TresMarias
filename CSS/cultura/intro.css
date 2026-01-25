@@ -18,8 +18,8 @@ main article {
     grid-template-rows: 15vh repeat(8, 1fr);
 }
 
-#artigo_intro a {
-    grid-column: 7 / 15;
+#artigo_intro:first-child {
+    grid-column: 6 / 15;
     grid-row: 2 / 9;
     position: relative;
     overflow: hidden;

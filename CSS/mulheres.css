@@ -1,16 +1,23 @@
-article {
-    grid-auto-rows: 35vh;
-    padding-top: 15vh;
-    column-gap: 0px;
+.mulheres_grid {
+    height: 100vh;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: 15vh repeat(8, 1fr);
 }
 
 .mulher_img {
     position: relative;
     grid-column: span 2;
+    grid-row: 2 / span 3;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+}
+
+.second {
+    grid-row: 5 / span 3;
 }
 
 .mulher_img a {
@@ -26,6 +33,10 @@ article {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.img_title p, .img_title h3 {
+    margin: 0;
 }
 
 /* hover */
