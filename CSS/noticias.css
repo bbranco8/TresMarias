@@ -35,7 +35,7 @@ img {
 /* Imagem */ 
 .conteudo_violencia:nth-child(1) {
     grid-column: 7 / span 8;
-    grid-row: 2 / span 4;
+    grid-row: 2 / span 5;
 }
 
 /* Texto 1 */
