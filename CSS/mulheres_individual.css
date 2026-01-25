@@ -30,8 +30,9 @@ main article {
 
 .mulher_individual_text h1 {
     grid-column: 1 / 6;
-    grid-row: 2 / span 2;
+    grid-row: 2 / span 1;
     margin: 0;
+    align-self: end;
 }
 
 .mulher_individual_text {
@@ -50,11 +51,68 @@ main article {
 
 .mulher_individual_text p {
     grid-column: 3 / -1;
-    grid-row: 5 / span 2;
+    grid-row: 4 / span 2;
     position: relative;
     margin: 0;
 }
 
-.mulher_individual_mais {
+.mulher_individual_text h3 {
+    grid-column: 3 / span 2;
+    grid-row: 7 / span 2;
+    align-self: center;
+}
 
+.mulher_individual_text h3:hover {
+    cursor: pointer;
+}
+
+/* LINKS */
+.mulher_individual_text div {
+    grid-column: 3 / -1;
+    grid-row: 8;
+    align-self: end;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mulher_individual_text div a {
+    display: block;
+    line-height: 0.5rem;
+    margin: 0;
+    text-decoration: underline;
+    color: black;
+}
+
+.mulher_individual_text div.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* LIZZIE MAGIE + OLGA MURRAY */
+#lizzie_magie .mulher_individual_text .citacao,
+#olga_murray .mulher_individual_text .citacao {
+    grid-column: 3 / span 4;
+    grid-row: 3;
+    align-self: end;
+    margin: 0;
+}
+
+#lizzie_magie .mulher_individual_text p,
+#olga_murray .mulher_individual_text p {
+    grid-row: 4 / span 4;
+    align-self: center;
+}
+
+#lizzie_magie .mulher_individual_text h3,
+#olga_murray .mulher_individual_text h3 {
+    grid-row: 7 / span 3;
+    align-self: center;
+}
+
+#lizzie_magie .mulher_individual_text div,
+#olga_murray .mulher_individual_text div {
+    grid-row: 9;
+    align-self: start;
 }
