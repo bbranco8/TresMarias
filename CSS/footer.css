@@ -42,6 +42,10 @@
 }
 
 
-.artigo_footer p, .artigo_footer h3 {
+.artigo_footer p, .artigo_footer h3, .artigo_footer a {
     color: white;
+}
+
+.artigo_footer a {
+    text-decoration: underline;
 }

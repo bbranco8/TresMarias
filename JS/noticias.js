@@ -24,3 +24,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(design_section);
 });
+
+
+/* LINKS VIOLENCIA -------------------------------------------------------------------------- */
+console.log("JS carregado");
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".mais").forEach(botao => {
+        botao.addEventListener("click", () => {
+            let artigo = botao.closest("article");
+            let links = artigo.querySelector(".conteudo_violencia div");
+
+            links.classList.toggle("mostrar");
+
+            botao.textContent = links.classList.contains("mostrar")
+                ? "Ver menos —"
+                : "Ver mais +";
+        });
+    });
+});
+
+
+
+/* LINKS DESIGUALDADE -------------------------------------------------------------------------- */
+console.log("JS carregado");
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".mais").forEach(botao => {
+        botao.addEventListener("click", () => {
+            let artigo = botao.closest("article");
+            let links = artigo.querySelector(".conteudo_desigualdade div");
+
+            links.classList.toggle("mostrar");
+
+            botao.textContent = links.classList.contains("mostrar")
+                ? "Ver menos —"
+                : "Ver mais +";
+        });
+    });
+});
+
+
+/* LINKS CONQUISTAS -------------------------------------------------------------------------- */
+console.log("JS carregado");
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".mais").forEach(botao => {
+        botao.addEventListener("click", () => {
+            let artigo = botao.closest("article");
+            let links = artigo.querySelector(".conteudo_conquistas div");
+
+            links.classList.toggle("mostrar");
+
+            botao.textContent = links.classList.contains("mostrar")
+                ? "Ver menos —"
+                : "Ver mais +";
+        });
+    });
+});
