@@ -232,6 +232,11 @@ img {
         font-size: 1.1rem;
         line-height: 1.27rem;
     }
+
+    .legenda {
+        font-size: 0.9rem;
+        line-height: 1.07rem;
+    }
 }
 
 @media(max-width: 1380px) {
@@ -261,6 +266,11 @@ img {
         font-size: 1rem;
         line-height: 1.07rem;
     }
+
+    .legenda {
+        font-size: 0.8rem;
+        line-height: 0.97rem;
+    }
 }
 
 @media(max-width: 1190px) {
@@ -278,13 +288,4 @@ img {
         font-size: 0.8rem;
         line-height: 0.97rem;
     }
-}
-
-
-
-
-
-.legenda {
-    font-size: 1rem;
-    line-height: 1.17rem;
 }
