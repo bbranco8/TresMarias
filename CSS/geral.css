@@ -145,11 +145,6 @@ header a {
     position: relative;
 }
 
-.logo_desktop {
-    position: relative;
-    /* já tens, perfeito */
-}
-
 .logo_desktop img {
     position: absolute;
     top: 50%;
@@ -203,7 +198,6 @@ main article {
     padding-right: 70px;
 
     height: 100vh;
-    /* Cada artigo ocupa a viewport inteira */
     scroll-snap-align: start;
     box-sizing: border-box;
 }
@@ -242,3 +236,5 @@ img {
     display: block;
     opacity: 1;
 }
+
+

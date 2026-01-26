@@ -173,7 +173,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const dentroDeAlguma = Array.from(secoesRosas).some(secao => {
             const secaoTop = secao.offsetTop;
             const secaoBottom = secaoTop + secao.offsetHeight;
-            return (scrollTop + h >= secaoTop && scrollTop + h < secaoBottom);
+            const viewportTop = scrollTop;
+            const viewportBottom = scrollTop + scroller.clientHeight;
+
+            // Se qualquer parte da seção está visível
+            return viewportBottom > secaoTop && viewportTop < secaoBottom;
         });
 
         if (dentroDeAlguma) {
