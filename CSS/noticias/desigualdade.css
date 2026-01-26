@@ -50,6 +50,11 @@
 
 /* RESPONSIVIDADE ---------------------------------------------------------------------- */
 @media (max-width: 1650px) and (max-height: 800px) {
+    /* Imagem 1 */
+    .conteudo_desigualdade:nth-child(1) {
+        grid-row: 5 / span 3;
+    }
+    
     /* Imagem 2 */
     .conteudo_desigualdade:nth-child(4) {
         grid-row: 1 / span 4;
@@ -69,10 +74,13 @@
     .conteudo_desigualdade:nth-child(7) {
         grid-row: 6 / span 3;
     }
+
+    /* Paragrafo 2 e 3 */
+    .conteudo_desigualdade:nth-child(6) p,  .conteudo_desigualdade:nth-child(7) p{
+        margin-top: 0;
+    }
+
 }
-
-
-
 
 
 
