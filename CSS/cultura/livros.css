@@ -88,3 +88,21 @@
     mix-blend-mode: multiply;
     margin-top: 5%;
 }
+
+
+
+
+/* RESPONSIVIDADE ------------------------------------------------------------ */
+@media (max-width: 1650px) and (max-height: 800px) {
+    #livros {
+        min-height: 100vh;
+        grid-template-rows: 15vh repeat(7, 1fr);
+        gap: 20px;
+    }
+
+        /* Novas Cartas */
+        .artigo_livro:nth-child(1) {
+            grid-column: 1 / span 5;
+            grid-row: 2 / span 7;
+        }
+}
