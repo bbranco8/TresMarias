@@ -263,13 +263,13 @@ img {
     }
 
     p {
-        font-size: 0.8rem;
-        line-height: 0.97rem;
+        font-size: 0.9rem;
+        line-height: 1.07rem;
     }
 
     .legenda {
-        font-size: 0.9rem;
-        line-height: 1.07rem;
+        font-size: 0.8rem;
+        line-height: 0.97rem;
     }
 }
 
