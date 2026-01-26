@@ -100,9 +100,14 @@
         gap: 20px;
     }
 
-        /* Novas Cartas */
-        .artigo_livro:nth-child(1) {
-            grid-column: 1 / span 5;
-            grid-row: 2 / span 7;
-        }
+    /* Novas Cartas */
+    .artigo_livro:nth-child(1) {
+        grid-column: 1 / span 5;
+        grid-row: 2 / span 7;
+    }
+
+    /* Happening */
+    .artigo_livro:nth-child(3) {
+        grid-row: 4 / 9;
+    }
 }
