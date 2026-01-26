@@ -42,10 +42,40 @@
 }
 
 
-.artigo_footer p, .artigo_footer h3, .artigo_footer a {
+.artigo_footer p,
+.artigo_footer h3,
+.artigo_footer a {
     color: white;
 }
 
 .artigo_footer a {
     text-decoration: underline;
+}
+
+
+/* RESPONSIVIDADE ------------------------------------------------------------ */
+@media (max-width: 1650px) and (max-height: 800px) {
+    #footer {
+        min-height: 100vh;
+        grid-template-rows: 15vh repeat(7, 1fr);
+        gap: 20px;
+    }
+
+    .artigo_footer:nth-child(1) {
+        grid-column: 1 / 7;
+        grid-row: 2 / span 5;
+        bottom: 0;
+    }
+
+    .artigo_footer:nth-child(2) {
+        grid-row: 4 / span 2;
+        margin-top: 0;
+    }
+
+    .artigo_footer:nth-child(3),
+    .artigo_footer:nth-child(4),
+    .artigo_footer:nth-child(5),
+    .artigo_footer:nth-child(6) {
+        grid-row: 7 / span 2;
+    }
 }

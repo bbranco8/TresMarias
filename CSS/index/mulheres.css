@@ -46,3 +46,22 @@
     bottom: 7vh;
     right: 5vh;
 }
+
+
+
+/* RESPONSIVIDADE ------------------------------------------------- */
+@media (max-width: 1650px) and (max-height: 800px) {
+    #mulheres {
+        min-height: 100vh;
+        grid-template-rows: 15vh repeat(7, 1fr);
+        gap: 20px;
+    }
+
+    .artigo_mulher:nth-child(2) {
+        grid-row: 1 / 8;
+    }
+
+    .artigo_mulher:nth-child(2) h2 {
+        margin-top: 0;
+    }
+}
