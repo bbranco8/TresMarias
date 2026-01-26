@@ -50,7 +50,8 @@
 
 
 /* RESPONSIVIDADE ------------------------------------------------- */
-@media (max-width: 1450px), (max-height: 760px) {
+@media (max-width: 1450px),
+(max-height: 760px) {
     #mulheres {
         min-height: 100vh;
         grid-template-rows: 15vh repeat(7, 1fr);
@@ -58,11 +59,12 @@
     }
 
     /* marias */
-        .artigo_mulher:first-child {
-            grid-column: span 3;
-            grid-row: 2 / 8;
-            padding-top: 0;
-        }
+    .artigo_mulher:first-child {
+        grid-column: span 3;
+        grid-row: 2 / 9;
+        padding-top: 0;
+        align-self: end;
+    }
 
     /* Anarcha */
     .artigo_mulher:nth-child(2) {
@@ -74,17 +76,18 @@
         margin-top: 0;
     }
 
-        /* Beatriz */
-        .artigo_mulher:nth-child(3) {
-            grid-column: 11 / span 3;
-            grid-row: 2 / 8;
-            padding-top: 0;
-        }
-    
-        .artigo_mulher:nth-child(3) h2 {
-            grid-row: 3 / 8;
-            position: relative;
-            bottom: 7vh;
-            right: 5vh;
-        }
+    /* Beatriz */
+    .artigo_mulher:nth-child(3) {
+        grid-column: 11 / span 3;
+        grid-row: 2 / 9;
+        padding-top: 0;
+        align-self: end;
+    }
+
+    .artigo_mulher:nth-child(3) h2 {
+        grid-row: 3 / 8;
+        position: relative;
+        bottom: 7vh;
+        right: 5vh;
+    }
 }
