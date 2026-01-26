@@ -54,3 +54,9 @@ main article {
     padding-top: 2%;
 }
 
+
+@media(max-height: 600px) {
+    #artigo_intro h1 {
+            grid-column: 1 / 7;
+        }
+}
