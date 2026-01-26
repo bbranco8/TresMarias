@@ -14,8 +14,11 @@
 
 .artigo_entrevista a {
     grid-column: 8 / 15;
+    grid-row: 1 / -1;
     position: relative;
     overflow: hidden;
+    cursor: none;
+    pointer-events: none;
 }
 
 .artigo_entrevista h1 {
@@ -41,7 +44,7 @@
     grid-row: 11/12;
     text-align: start;
     align-self: center;
-    color:black;
+    color: black;
     text-decoration: underline;
     cursor: pointer;
     z-index: 99;
@@ -49,6 +52,75 @@
 
 #imagem_mae {
     position: absolute;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: top center;
+}
+
+
+/* RESPONSIVIDADE -------------------------------------------------------------------------------------------------- */
+/* MOBILE  ----------------------------- */
+@media (max-width: 890px) {
+
+    #entrevistas,
+    .artigo_entrevista {
+        height: 100vh;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 10vh repeat(6, 1fr) 5vh;
+        margin-bottom: 10vh;
+        padding-left: 0;
+    }
+
+    /* Imagem */
+    .artigo_entrevista:first-child {
+        display: block;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+    }
+
+    .artigo_entrevista:first-child a {
+        display: block;
+        height: 100%;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+    }
+
+    .artigo_entrevista:first-child a img {
+        opacity: 0.8;
+    }
+
+    /* Textos */
+    .artigo_entrevista:nth-child(2),
+    .artigo_entrevista:nth-child(3) {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    /* Titulo */
+    .artigo_entrevista:nth-child(2) {
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+    }
+
+    .artigo_entrevista:nth-child(2) h1 {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        margin: 0;
+    }
+
+    /* Subtitulo */
+    .artigo_entrevista:nth-child(3) {
+        display: block;
+        grid-column: 1 / -1;
+        grid-row: 6;
+        z-index: 10;
+    }
+
+
+    .artigo_entrevista:nth-child(4) {
+        display: none;
+    }
+
+
 }

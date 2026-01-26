@@ -156,6 +156,12 @@
         width: auto;
     }
 
+
+    h3 {
+        font-size: 1.6rem;
+        line-height: 1.77rem;
+    }
+
     .legenda {
         font-size: 0.9rem;
         line-height: 1.07rem;
