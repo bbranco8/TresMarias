@@ -61,7 +61,7 @@ let mobile_layouts = [
         { colStart: 1, colEnd: 4, rowStart: 1, rowEnd: 3 },
         { colStart: 5, colEnd: 7, rowStart: 3, rowEnd: 4 },
         { colStart: 2, colEnd: 5, rowStart: 4, rowEnd: 6 },
-        { colStart: 4, colEnd: 7, rowStart: 9, rowEnd: 11 },
+        { colStart: 4, colEnd: 7, rowStart: 8, rowEnd: 10 },
         { colStart: 1, colEnd: 3, rowStart: 7, rowEnd: 9 }
     ],
 ];
@@ -179,17 +179,24 @@ document.addEventListener('DOMContentLoaded', () => {
             : document.querySelector('.logo_desktop img');
     };
 
+    // Mantemos a logo atual para evitar mudanças desnecessárias
+    let currentLogoSrc = '';
+
     const updateLogo = (intersecting) => {
         const logo = getLogo();
         if (!logo) return;
 
-        if (intersecting) {
-            header.classList.add('white_header');
-            logo.src = isMobile() ? white_logo_mobile : white_logo_desktop;
-        } else {
-            header.classList.remove('white_header');
-            logo.src = isMobile() ? original_logo_mobile : original_logo_desktop;
+        const newSrc = intersecting
+            ? (isMobile() ? white_logo_mobile : white_logo_desktop)
+            : (isMobile() ? original_logo_mobile : original_logo_desktop);
+
+        // Só muda se for diferente da atual
+        if (currentLogoSrc !== newSrc) {
+            logo.src = newSrc;
+            currentLogoSrc = newSrc;
         }
+
+        header.classList.toggle('white_header', intersecting);
     };
 
     const observer = new IntersectionObserver(entries => {
@@ -198,17 +205,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, {
         root: null,
-        threshold: 0.01
+        threshold: 0,
+        rootMargin: '120px 0px 0px 0px'
     });
 
     observer.observe(culturaSection);
 
+    // Atualizar logo no resize (sem recalcular desnecessariamente)
     window.addEventListener('resize', () => {
-        // Atualiza logo com base na posição da seção e tela
         const intersecting = culturaSection.getBoundingClientRect().top < window.innerHeight * 0.9;
         updateLogo(intersecting);
     });
+
+    // Inicializa logo corretamente
+    const initialIntersecting = culturaSection.getBoundingClientRect().top < window.innerHeight * 0.9;
+    updateLogo(initialIntersecting);
 });
+
 
 
 

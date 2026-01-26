@@ -37,6 +37,10 @@ main article {
     bottom: 10vh;
 }
 
+#disclaimer {
+    display: none;
+}
+
 
 /* RESPONSIVIDADE --------------------------------------------------------------------- */
 
@@ -44,7 +48,7 @@ main article {
     .main_logo {
         content: url("/LOGO/3m_logo.png");
         grid-column: 2 / span 4;
-        bottom: 0;
+        bottom: 10%;
         width: 100%;
     }
 
@@ -52,5 +56,14 @@ main article {
         grid-template-columns: repeat(6, 1fr);
         padding-top: 10vh;
         padding-bottom: 5vh;
+    }
+
+    #disclaimer {
+        display: block;
+        grid-row: 8;
+        grid-column: 2 / 6;
+        text-align: center;
+        align-self: end;
+        margin-bottom: 0;
     }
 }
