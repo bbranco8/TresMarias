@@ -65,7 +65,7 @@
         display: block;
         grid-column: 1 / -1;
         grid-row: 5 / span 3;
-        align-self: center;
+        align-self: end;
         padding-top: 6%;
     }
 
