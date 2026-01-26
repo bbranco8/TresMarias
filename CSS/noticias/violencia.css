@@ -112,12 +112,6 @@
         grid-column: 1 / 6;
     }
 
-    /* Texto 2 e 3 */
-    .conteudo_violencia:nth-child(3),
-    .conteudo_violencia:nth-child(5) {
-        grid-row: 6 / span 2;
-    }
-
     /* Links */
     .conteudo_violencia:nth-child(4) {
         grid-row: 7 / span 2;
