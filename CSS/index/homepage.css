@@ -36,3 +36,21 @@ main article {
     position: relative;
     bottom: 10vh;
 }
+
+
+/* RESPONSIVIDADE --------------------------------------------------------------------- */
+
+@media (max-width: 890px) {
+    .main_logo {
+        content: url("/LOGO/3m_logo.png");
+        grid-column: 2 / span 4;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .homepage_grid {
+        grid-template-columns: repeat(6, 1fr);
+        padding-top: 10vh;
+        padding-bottom: 5vh;
+    }
+}

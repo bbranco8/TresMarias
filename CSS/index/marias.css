@@ -1,4 +1,8 @@
 /* MARIAS ------------------------------------------------- */
+.ilustracao_mobile {
+    display: none;
+}
+
 #maria_grid {
     grid-column: 1 / -1;
     grid-row: 1;
@@ -32,4 +36,37 @@
     text-align: center;
     margin-top: 8px;
     font-size: 0.9em;
+}
+
+
+/* MOBILE  ----------------------------- */
+@media (max-width: 890px) {
+    #marias {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 10vh repeat(6, 1fr) 5vh;
+    }
+
+    .maria_item,
+    .maria_text {
+        display: none;
+    }
+
+    .ilustracao_mobile {
+        display: block;
+    }
+
+    .ilustracao_mobile:first-child {
+        grid-column: 1 / span 4;
+        grid-row: 2 / span 2;
+    }
+
+    .ilustracao_mobile:nth-child(2) {
+        grid-column: 5 / span 3;
+        grid-row: 2 / span 2;
+    }
+
+    .ilustracao_mobile:nth-child(3) {
+        grid-column: 1 / -1;
+        grid-row: 4 / -1;
+    }
 }

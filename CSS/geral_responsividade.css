@@ -111,21 +111,38 @@
 
 
 
-
-/* RESPONSIVIDADE -------------------------------------------------- */
-/* HEADER MOBILE */
+/* MOBILE  ------------------------------------------------------------------------ */
 @media (max-width: 890px) {
+
+    /* CONTAINER */
+    .container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    /* MAIN */
+    main {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    main article {
+        grid-template-columns: repeat(6, 1fr);
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+
+
+    /* HEADER */
     header {
         grid-template-columns: 1fr;
         align-content: center;
     }
 
-    /* Esconde TODOS os links do header */
-    header a, .logo_desktop {
+    header a,
+    .logo_desktop {
         display: none;
     }
 
-    /* Mostra apenas o logo mobile */
     .logo_mobile {
         display: flex;
         grid-column: 1 / -1;
@@ -136,7 +153,11 @@
 
     .logo_mobile img {
         height: 2.5rem;
-        /* ajusta como quiser */
         width: auto;
+    }
+
+    .legenda {
+        font-size: 0.9rem;
+        line-height: 1.07rem;
     }
 }

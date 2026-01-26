@@ -75,3 +75,55 @@
 .artigo_cultura img {
     width: 90%;
 }
+
+
+/* MOBILE  ----------------------------- */
+@media (max-width: 890px) {
+    #cultura {
+        height: 100vh;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 10vh repeat(6, 1fr) 5vh;
+        margin-bottom: 10vh;
+    }
+
+    #titulo {
+        display: block;
+        padding: 0;
+        grid-column: 1 / -1;
+        grid-row: 2 / span 2;
+    }
+
+    /* LIVRO */
+    .artigo_cultura:nth-child(2) {
+        padding-top: 5%;
+        display: block;
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 3;
+    }
+
+    .artigo_cultura:nth-child(2) P {
+        padding-top: 5%;
+    }
+
+    /* FILME */
+    .artigo_cultura:nth-child(3) {
+        display: block;
+        grid-column: 4 / span 3;
+        grid-row: 5 / -1;
+    }
+
+    /* DESIGN */
+    .artigo_cultura:nth-child(4) {
+        display: block;
+        padding-top: 0;
+        grid-column: 1 / span 3;
+        grid-row: 6 / span 2;
+    }
+
+    /* MUSICA */
+    .artigo_cultura:nth-child(5) {
+        grid-column: 4 / span 3;
+        grid-row: 3 / span 2;
+    }
+
+}

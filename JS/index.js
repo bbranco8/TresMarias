@@ -16,8 +16,8 @@ function setGridRows() {
 }
 
 
-
-let layouts = [
+/* COMPUTADOR */
+let desktop_layouts = [
     // Layout 1
     [
         { colStart: 2, colEnd: 5, rowStart: 7, rowEnd: 9 },
@@ -25,8 +25,8 @@ let layouts = [
         { colStart: 9, colEnd: 12, rowStart: 3, rowEnd: 5 },
         { colStart: 9, colEnd: 11, rowStart: 8, rowEnd: 10 },
         { colStart: 2, colEnd: 4, rowStart: 1, rowEnd: 3 }
-    ], 
-    
+    ],
+
     // Layout 2
     [
         { colStart: 3, colEnd: 6, rowStart: 1, rowEnd: 3 },
@@ -34,7 +34,7 @@ let layouts = [
         { colStart: 10, colEnd: 12, rowStart: 2, rowEnd: 4 },
         { colStart: 5, colEnd: 7, rowStart: 5, rowEnd: 7 },
         { colStart: 1, colEnd: 3, rowStart: 8, rowEnd: 10 },
-    ],  
+    ],
     // Layout 3
     [
         { colStart: 2, colEnd: 5, rowStart: 1, rowEnd: 3 },
@@ -42,21 +42,41 @@ let layouts = [
         { colStart: 11, colEnd: 13, rowStart: 1, rowEnd: 3 },
         { colStart: 12, colEnd: 15, rowStart: 6, rowEnd: 8 },
         { colStart: 7, colEnd: 9, rowStart: 5, rowEnd: 7 }
-    ], 
+    ],
     // Layout 4
     [
-    { colStart: 1, colEnd: 4, rowStart: 4, rowEnd: 6 },
-    { colStart: 5, colEnd: 8, rowStart: 1, rowEnd: 3 },
-    { colStart: 6, colEnd: 8, rowStart: 8, rowEnd: 10 },
-    { colStart: 10, colEnd: 12, rowStart: 2, rowEnd: 4 },
-    { colStart: 13, colEnd: 15, rowStart: 5, rowEnd: 7 }
-    ] 
+        { colStart: 1, colEnd: 4, rowStart: 4, rowEnd: 6 },
+        { colStart: 5, colEnd: 8, rowStart: 1, rowEnd: 3 },
+        { colStart: 6, colEnd: 8, rowStart: 8, rowEnd: 10 },
+        { colStart: 10, colEnd: 12, rowStart: 2, rowEnd: 4 },
+        { colStart: 13, colEnd: 15, rowStart: 5, rowEnd: 7 }
+    ]
 ];
+
+
+/* MOBILE */
+let mobile_layouts = [
+    // Layout 1
+    [
+        { colStart: 1, colEnd: 4, rowStart: 1, rowEnd: 3 },
+        { colStart: 5, colEnd: 7, rowStart: 3, rowEnd: 4 },
+        { colStart: 2, colEnd: 5, rowStart: 4, rowEnd: 6 },
+        { colStart: 4, colEnd: 7, rowStart: 9, rowEnd: 11 },
+        { colStart: 1, colEnd: 3, rowStart: 7, rowEnd: 9 }
+    ],
+];
+
+
+function isMobile() {
+    return window.innerWidth <= 890;
+}
+
 
 let last_layout_index = -1;
 
 function applyRandomLayout() {
     let images = document.querySelectorAll('.homepage_grid img');
+    let layouts = isMobile() ? mobile_layouts : desktop_layouts;
 
     let layout_index;
     do {
@@ -68,12 +88,15 @@ function applyRandomLayout() {
 
     images.forEach((img, index) => {
         let pos = layout[index];
+        if (!pos) return;
+
         img.style.gridColumnStart = pos.colStart;
         img.style.gridColumnEnd = pos.colEnd;
         img.style.gridRowStart = pos.rowStart;
         img.style.gridRowEnd = pos.rowEnd;
     });
 }
+
 
 
 let section = document.querySelector('main section');
@@ -137,27 +160,70 @@ mariaItems.forEach((item, index) => {
 
 /* CULTURA -------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-    let header = document.querySelector('header');
-    let culturaSection = document.getElementById('cultura');
-    let logo = document.getElementById('favicon');
+    const header = document.querySelector('header');
+    const culturaSection = document.getElementById('cultura');
 
-    let original_logo = '../LOGO/3m_logo.png';
-    let white_logo = '../LOGO/3m_logo_white.png';
+    // Logos para desktop
+    const original_logo_desktop = '../LOGO/3m_logo.png';
+    const white_logo_desktop = '../LOGO/3m_logo_white.png';
 
-    let observer = new IntersectionObserver(entries => {
+    // Logos para mobile
+    const original_logo_mobile = '../LOGO/3marias_logo.png';
+    const white_logo_mobile = '../LOGO/3marias_logo_white.png';
+
+    const isMobile = () => window.innerWidth <= 890;
+
+    const getLogo = () => {
+        return isMobile()
+            ? document.querySelector('.logo_mobile img')
+            : document.querySelector('.logo_desktop img');
+    };
+
+    const updateLogo = (intersecting) => {
+        const logo = getLogo();
+        if (!logo) return;
+
+        if (intersecting) {
+            header.classList.add('white_header');
+            logo.src = isMobile() ? white_logo_mobile : white_logo_desktop;
+        } else {
+            header.classList.remove('white_header');
+            logo.src = isMobile() ? original_logo_mobile : original_logo_desktop;
+        }
+    };
+
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                header.classList.add('white_header');
-                logo.src = white_logo;
-            } else {
-                header.classList.remove('white_header');
-                logo.src = original_logo;
-            }
+            updateLogo(entry.isIntersecting);
         });
     }, {
-        root: null, // viewport
-        threshold: 0.9
+        root: null,
+        threshold: 0.7
     });
 
     observer.observe(culturaSection);
+
+    window.addEventListener('resize', () => {
+        // Atualiza logo com base na posição da seção e tela
+        const intersecting = culturaSection.getBoundingClientRect().top < window.innerHeight * 0.9;
+        updateLogo(intersecting);
+    });
 });
+
+
+
+/* LINKS MOBILE */
+document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = () => window.innerWidth <= 890; // mesmo breakpoint do seu site
+    const links = document.querySelectorAll('a.no_mobile'); // todos os links com essa classe
+
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (isMobile()) {
+                e.preventDefault(); // bloqueia o clique em mobile
+                console.log('Link bloqueado em mobile:', link.href);
+            }
+        });
+    });
+});
+
