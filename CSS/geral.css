@@ -278,7 +278,7 @@ img {
     }
 }
 
-@media(max-width: 1240px), (max-height: 500px) {
+@media(max-width: 1240px) {
     h1 {
         font-size: 3.7rem;
         line-height: 3.87rem;
@@ -293,4 +293,13 @@ img {
         font-size: 0.8rem;
         line-height: 0.97rem;
     }
+}
+
+@media(max-height: 600px) {
+    h1 {
+        font-size: 3rem;
+        line-height: 3.07rem;
+    }
+
+
 }
