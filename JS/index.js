@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, {
         root: null,
-        threshold: 0.7
+        threshold: 0.01
     });
 
     observer.observe(culturaSection);
@@ -227,3 +227,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+/* FOOTER -------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    let header = document.querySelector('header');
+    let footerSection = document.getElementById('footer');
+    let logo = document.querySelector('.logo_mobile img');
+
+    let original_logo = '../LOGO/3marias_logo.png';
+    let white_logo = '../LOGO/3marias_logo_white.png';
+
+    let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                header.classList.add('white_header');
+                logo.src = white_logo;
+            } else {
+                header.classList.remove('white_header');
+                logo.src = original_logo;
+            }
+        });
+    }, {
+        root: null, // viewport
+        threshold: 0.9
+    });
+
+    if (window.innerWidth <= 890 && footerSection) {
+        observer.observe(footerSection);
+    }
+});

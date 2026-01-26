@@ -162,6 +162,11 @@
         line-height: 1.77rem;
     }
 
+    p {
+        font-size: 1.1rem;
+        line-height: 1.27rem;
+    }
+
     .legenda {
         font-size: 0.9rem;
         line-height: 1.07rem;

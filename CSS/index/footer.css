@@ -1,3 +1,85 @@
 #footer {
     display: none;
 }
+
+
+/* RESPONSIVIDADE -------------------------------------------------------------------------------------------------- */
+/* MOBILE  ----------------------------- */
+@media (max-width: 890px) {
+    #footer {
+        display: grid;
+        background-color: black;
+
+        height: 100vh;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 10vh repeat(6, 1fr) 5vh;
+        margin-bottom: 10vh;
+    }
+
+    .artigo_footer {
+        display: none;
+    }
+
+    /* 3M */
+    .artigo_footer:nth-child(1) {
+        display: block;
+        grid-column: 1 / span 4;
+        grid-row: 2 / span 4;
+    }
+
+    .artigo_footer:nth-child(1) img {
+        width: 100%;
+    }
+
+    /* Texto */
+    .artigo_footer:nth-child(2) {
+        display: block;
+        grid-column: 1 / span 6;
+        grid-row: 4 / span 2;
+        align-self: end;
+        position: relative;
+        top: 5%;
+    }
+
+    #ref {
+        display: none;
+    }
+
+    /* NOMES */
+    .artigo_footer:nth-child(3),
+    .artigo_footer:nth-child(4) {
+        display: block;
+        grid-row: 6;
+        align-self: end;
+    }
+
+    .artigo_footer:nth-child(3) h3,
+    .artigo_footer:nth-child(4) h3 {
+        margin: 0;
+    }
+
+    .artigo_footer:nth-child(3) {
+        grid-column: span 4;
+    }
+
+    .artigo_footer:nth-child(4) {
+        grid-column: span 4;
+    }
+
+    .artigo_footer:nth-child(5),
+    .artigo_footer:nth-child(6) {
+        display: block;
+        grid-column: span 3;
+        grid-row: 7;
+    }
+
+    .artigo_footer:nth-child(5) {
+        grid-column: span 4;
+    }
+
+    .artigo_footer p,
+    .artigo_footer h3,
+    .artigo_footer a {
+        color: white;
+    }
+}
