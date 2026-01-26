@@ -75,7 +75,7 @@
 
 
 /* RESPONSIVIDADE ---------------------------------------------------------------------- */
-@media(max-width: 1480px), (max-height: 820px) {
+@media(max-width: 1280px), (max-height: 620px) {
     /* Imagem */
     .conteudo_violencia:nth-child(1) {
         grid-row: 2 / span 3;
