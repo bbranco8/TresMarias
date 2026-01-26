@@ -52,7 +52,7 @@ header {
 .artigo_footer p,
 .artigo_footer h3,
 .artigo_footer a,
-.header a {
+header a {
     color: white;
 }
 
