@@ -1,20 +1,17 @@
 /* DESIGUALDADE NA ARTE BACKGROUND -------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
-    const header = document.querySelector("header");
-    const secaoRosa = document.querySelector(".seccao_rosa");
-    const scroller = document.querySelector("main");
+    let header = document.querySelector("header");
+    let secaoRosa = document.querySelector(".seccao_rosa");
+    let scroller = document.querySelector("main");
 
     if (!header || !secaoRosa || !scroller) return;
 
     scroller.addEventListener("scroll", () => {
-        // scrollTop do main (quanto o main scrollou)
-        const scrollTop = scroller.scrollTop;
+        let scrollTop = scroller.scrollTop;
+        let secaoTop = secaoRosa.offsetTop;
+        let secaoBottom = secaoTop + secaoRosa.offsetHeight;
 
-        // posição da secao dentro do main
-        const secaoTop = secaoRosa.offsetTop;
-        const secaoBottom = secaoTop + secaoRosa.offsetHeight;
-
-        const h = header.offsetHeight;
+        let h = header.offsetHeight;
 
         // Verifica se o topo do header "toca" a secção rosa dentro do main
         if (scrollTop + h >= secaoTop && scrollTop + h < secaoBottom) {
@@ -24,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Executa uma vez no load para setar a classe certa inicialmente
     scroller.dispatchEvent(new Event('scroll'));
 });
 

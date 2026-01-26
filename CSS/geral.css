@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-size: clamp(12px, 1.5vw + 1vh, 17px);
     height: 100%;
+    overflow-x: hidden;
 }
 
 .container {
@@ -45,8 +46,10 @@ p {
     font-family: "Libertinus Serif", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.2rem; /* 14.4pt */
-    line-height: 1.37rem; /* 16.4pt */
+    font-size: 1.2rem;
+    /* 14.4pt */
+    line-height: 1.37rem;
+    /* 16.4pt */
 }
 
 .legenda {
@@ -164,9 +167,9 @@ header a {
 /* Sections */
 .header_link {
     grid-column: span 2;
-        justify-content: center;
-        text-align: center;
-        justify-self: end;
+    justify-content: center;
+    text-align: center;
+    justify-self: end;
 }
 
 .logo_mobile {
@@ -182,9 +185,13 @@ main {
     grid-template-columns: repeat(14, 1fr);
     gap: 20px;
 
+    height: 100vh;
+    /* Altura total da viewport */
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 
 main article {
@@ -195,7 +202,10 @@ main article {
     padding-left: 70px;
     padding-right: 70px;
 
+    height: 100vh;
+    /* Cada artigo ocupa a viewport inteira */
     scroll-snap-align: start;
+    box-sizing: border-box;
 }
 
 .gap {

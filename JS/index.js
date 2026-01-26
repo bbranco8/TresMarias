@@ -160,32 +160,32 @@ mariaItems.forEach((item, index) => {
 /* CULTURA ----------------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
-    const secaoRosa = document.querySelector(".seccao_rosa");
+    const secoesRosas = document.querySelectorAll(".seccao_rosa");
     const scroller = document.querySelector("main");
 
-    if (!header || !secaoRosa || !scroller) return;
+    if (!header || secoesRosas.length === 0 || !scroller) return;
 
     scroller.addEventListener("scroll", () => {
-        // scrollTop do main (quanto o main scrollou)
         const scrollTop = scroller.scrollTop;
-
-        // posição da secao dentro do main
-        const secaoTop = secaoRosa.offsetTop;
-        const secaoBottom = secaoTop + secaoRosa.offsetHeight;
-
         const h = header.offsetHeight;
 
-        // Verifica se o topo do header "toca" a secção rosa dentro do main
-        if (scrollTop + h >= secaoTop && scrollTop + h < secaoBottom) {
+        // Verifica se o scroll está dentro de alguma das seções rosas
+        const dentroDeAlguma = Array.from(secoesRosas).some(secao => {
+            const secaoTop = secao.offsetTop;
+            const secaoBottom = secaoTop + secao.offsetHeight;
+            return (scrollTop + h >= secaoTop && scrollTop + h < secaoBottom);
+        });
+
+        if (dentroDeAlguma) {
             header.classList.add("white_header");
         } else {
             header.classList.remove("white_header");
         }
     });
 
-    // Executa uma vez no load para setar a classe certa inicialmente
-    scroller.dispatchEvent(new Event('scroll'));
+    scroller.dispatchEvent(new Event("scroll"));
 });
+
 
 
 
@@ -202,35 +202,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
-
-
-
-/* FOOTER -------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-    let header = document.querySelector('header');
-    let footerSection = document.getElementById('footer');
-    let logo = document.querySelector('.logo_mobile img');
-
-    let original_logo = '../LOGO/3marias_logo.png';
-    let white_logo = '../LOGO/3marias_logo_white.png';
-
-    let observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                header.classList.add('white_header');
-                logo.src = white_logo;
-            } else {
-                header.classList.remove('white_header');
-                logo.src = original_logo;
-            }
-        });
-    }, {
-        root: null, // viewport
-        threshold: 0.9
-    });
-
-    if (window.innerWidth <= 890 && footerSection) {
-        observer.observe(footerSection);
-    }
 });

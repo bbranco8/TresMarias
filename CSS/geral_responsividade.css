@@ -147,16 +147,37 @@
         display: flex;
         grid-column: 1 / -1;
         justify-content: center;
-        height: 100%;
         align-items: center;
+        position: relative;
+        /* igual ao desktop */
+        height: 1.9rem;
     }
 
-    .logo_mobile img {
-        height: 2.5rem;
-        width: auto;
+    /* Logo mobile: default */
+    .logo_mobile .logo_pink {
+        opacity: 1;
+        position: relative;
+    }
+
+    .logo_mobile .logo_white {
+        opacity: 0;
+        z-index: 2;
+    }
+
+    /* Quando header tem white_header */
+    header.white_header .logo_mobile .logo_pink {
+        opacity: 0;
+    }
+
+    header.white_header .logo_mobile .logo_white {
+        opacity: 1;
     }
 
 
+
+
+
+    /* HIERARQY */
     h3 {
         font-size: 1.6rem;
         line-height: 1.77rem;
