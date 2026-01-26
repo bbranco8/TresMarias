@@ -157,75 +157,39 @@ mariaItems.forEach((item, index) => {
 });
 
 
+/* CULTURA ----------------------------------------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    const secaoRosa = document.querySelector(".seccao_rosa");
+    const scroller = document.querySelector("main");
 
-/* CULTURA -------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('header');
-    const culturaSection = document.getElementById('cultura');
+    if (!header || !secaoRosa || !scroller) return;
 
-    // Logos para desktop
-    const original_logo_desktop = '../LOGO/3m_logo.png';
-    const white_logo_desktop = '../LOGO/3m_logo_white.png';
+    scroller.addEventListener("scroll", () => {
+        // scrollTop do main (quanto o main scrollou)
+        const scrollTop = scroller.scrollTop;
 
-    // Logos para mobile
-    const original_logo_mobile = '../LOGO/3marias_logo.png';
-    const white_logo_mobile = '../LOGO/3marias_logo_white.png';
+        // posição da secao dentro do main
+        const secaoTop = secaoRosa.offsetTop;
+        const secaoBottom = secaoTop + secaoRosa.offsetHeight;
 
-    const isMobile = () => window.innerWidth <= 890;
+        const h = header.offsetHeight;
 
-    const getLogo = () => {
-        return isMobile()
-            ? document.querySelector('.logo_mobile img')
-            : document.querySelector('.logo_desktop img');
-    };
-
-    // Mantemos a logo atual para evitar mudanças desnecessárias
-    let currentLogoSrc = '';
-
-    const updateLogo = (intersecting) => {
-        const logo = getLogo();
-        if (!logo) return;
-
-        const newSrc = intersecting
-            ? (isMobile() ? white_logo_mobile : white_logo_desktop)
-            : (isMobile() ? original_logo_mobile : original_logo_desktop);
-
-        // Só muda se for diferente da atual
-        if (currentLogoSrc !== newSrc) {
-            logo.src = newSrc;
-            currentLogoSrc = newSrc;
+        // Verifica se o topo do header "toca" a secção rosa dentro do main
+        if (scrollTop + h >= secaoTop && scrollTop + h < secaoBottom) {
+            header.classList.add("white_header");
+        } else {
+            header.classList.remove("white_header");
         }
-
-        header.classList.toggle('white_header', intersecting);
-    };
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            updateLogo(entry.isIntersecting);
-        });
-    }, {
-        root: null,
-        threshold: 0,
-        rootMargin: '120px 0px 0px 0px'
     });
 
-    observer.observe(culturaSection);
-
-    // Atualizar logo no resize (sem recalcular desnecessariamente)
-    window.addEventListener('resize', () => {
-        const intersecting = culturaSection.getBoundingClientRect().top < window.innerHeight * 0.9;
-        updateLogo(intersecting);
-    });
-
-    // Inicializa logo corretamente
-    const initialIntersecting = culturaSection.getBoundingClientRect().top < window.innerHeight * 0.9;
-    updateLogo(initialIntersecting);
+    // Executa uma vez no load para setar a classe certa inicialmente
+    scroller.dispatchEvent(new Event('scroll'));
 });
 
 
 
-
-/* LINKS MOBILE */
+/* LINKS MOBILE -------------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const isMobile = () => window.innerWidth <= 890; // mesmo breakpoint do seu site
     const links = document.querySelectorAll('a.no_mobile'); // todos os links com essa classe

@@ -34,28 +34,31 @@ imagens_musica.forEach(img => {
 
 
 /* DESIGN BACKGROUND -------------------------------------------------------- */
-document.addEventListener('DOMContentLoaded', () => {
-  let header = document.querySelector('header');
-  let design_section = document.getElementById('design');
-  let logo = document.getElementById('favicon');
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
+  const secaoRosa = document.querySelector(".seccao_rosa");
+  const scroller = document.querySelector("main");
 
-  let original_logo = '../LOGO/3m_logo.png';
-  let white_logo = '../LOGO/3m_logo_white.png';
+  if (!header || !secaoRosa || !scroller) return;
 
-  let observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        header.classList.add('white_header');
-        logo.src = white_logo;
-      } else {
-        header.classList.remove('white_header');
-        logo.src = original_logo;
-      }
-    });
-  }, {
-    root: null, // viewport
-    threshold: 0.9
+  scroller.addEventListener("scroll", () => {
+    // scrollTop do main (quanto o main scrollou)
+    const scrollTop = scroller.scrollTop;
+
+    // posição da secao dentro do main
+    const secaoTop = secaoRosa.offsetTop;
+    const secaoBottom = secaoTop + secaoRosa.offsetHeight;
+
+    const h = header.offsetHeight;
+
+    // Verifica se o topo do header "toca" a secção rosa dentro do main
+    if (scrollTop + h >= secaoTop && scrollTop + h < secaoBottom) {
+      header.classList.add("white_header");
+    } else {
+      header.classList.remove("white_header");
+    }
   });
 
-  observer.observe(design_section);
+  // Executa uma vez no load para setar a classe certa inicialmente
+  scroller.dispatchEvent(new Event('scroll'));
 });

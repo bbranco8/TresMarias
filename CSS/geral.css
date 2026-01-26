@@ -93,7 +93,28 @@ header {
     padding: 15px 70px;
     z-index: 199;
     mix-blend-mode: multiply;
+    position: sticky;
+    top: 0;
 }
+
+.logo_pink {
+    opacity: 1;
+}
+
+.logo_white {
+    opacity: 0;
+    position: absolute;
+}
+
+/* quando o header estiver na secção rosa */
+header.white_header .logo_pink {
+    opacity: 0;
+}
+
+header.white_header .logo_white {
+    opacity: 1;
+}
+
 
 header.white_header a h3 {
     color: white;
@@ -118,6 +139,19 @@ header a {
     height: 1.9rem;
     width: auto;
     display: block;
+    position: relative;
+}
+
+.logo_desktop {
+    position: relative;
+    /* já tens, perfeito */
+}
+
+.logo_desktop img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
 .logo_desktop img {
