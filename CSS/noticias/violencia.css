@@ -93,10 +93,14 @@
 
     /* Links */
     .conteudo_violencia:nth-child(4) {
-        grid-row: 7 / span 4;
+        grid-row: 7 / span 2;
     }
 
     .conteudo_violencia:nth-child(6) {
         grid-row: 5 / span 3;
+    }
+
+    .conteudo_violencia div a {
+        line-height: 0rem;
     }
 }
