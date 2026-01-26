@@ -1,8 +1,15 @@
 /* FOOTER -------------------------------------------------- */
-#footer {
+body {
     background-color: black;
+}
+
+#footer {
     grid-template-rows: 15vh repeat(8, 1fr);
     min-height: 100vh;
+}
+
+header {
+    mix-blend-mode: normal;
 }
 
 .artigo_footer:nth-child(1) {
