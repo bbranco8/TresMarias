@@ -217,7 +217,7 @@ img {
     }
 }
 
-@media(max-width: 1480px) {
+@media(max-width: 1480px), (max-height: 820px) {
     h1 {
         font-size: 4.4rem;
         line-height: 4.57rem;
@@ -231,6 +231,11 @@ img {
     h3 {
         font-size: 1.4rem;
         line-height: 1.57rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.07rem;
     }
 
     .legenda {
@@ -273,7 +278,7 @@ img {
     }
 }
 
-@media(max-width: 1230px), (max-height: 500px) {
+@media(max-width: 1240px), (max-height: 500px) {
     h1 {
         font-size: 3.7rem;
         line-height: 3.87rem;
