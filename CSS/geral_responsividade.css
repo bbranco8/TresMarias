@@ -1,0 +1,142 @@
+/* RESPONSIVIDADE --------------------------------------------------------------------------------- */
+/* TYPE HIERARCHY -------------*/
+@media(max-width: 1650px) {
+    h1 {
+        font-size: 4.8rem;
+        line-height: 4.97rem;
+    }
+
+    h3 {
+        font-size: 1.7rem;
+        line-height: 1.87rem;
+    }
+}
+
+@media(max-width: 1600px), (max-height: 860px) {
+    h2 {
+        font-size: 2.9rem;
+        line-height: 3.07rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.27rem;
+    }
+}
+
+@media(max-width: 1480px), (max-height: 820px) {
+    h1 {
+        font-size: 4.4rem;
+        line-height: 4.57rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        line-height: 2.67rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        line-height: 1.57rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.07rem;
+    }
+
+    .legenda {
+        font-size: 0.9rem;
+        line-height: 0.95rem;
+    }
+}
+
+@media(max-width: 1380px) {
+    h1 {
+        font-size: 4.2rem;
+        line-height: 4.37rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 2.07rem;
+    }
+}
+
+@media(max-width: 1280px), (max-height: 650px) {
+    h1 {
+        font-size: 3.9rem;
+        line-height: 4.07rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        line-height: 1.37rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.07rem;
+    }
+
+    .legenda {
+        font-size: 0.8rem;
+        line-height: 0.97rem;
+    }
+}
+
+@media(max-width: 1240px) {
+    h1 {
+        font-size: 3.7rem;
+        line-height: 3.87rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 2.07rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+        line-height: 0.97rem;
+    }
+}
+
+@media(max-height: 600px) {
+    h1 {
+        font-size: 3rem;
+        line-height: 3.07rem;
+    }
+}
+
+
+
+
+/* RESPONSIVIDADE -------------------------------------------------- */
+/* HEADER MOBILE */
+@media (max-width: 890px) {
+    header {
+        grid-template-columns: 1fr;
+        align-content: center;
+    }
+
+    /* Esconde TODOS os links do header */
+    header a, .logo_desktop {
+        display: none;
+    }
+
+    /* Mostra apenas o logo mobile */
+    .logo_mobile {
+        display: flex;
+        grid-column: 1 / -1;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+    }
+
+    .logo_mobile img {
+        height: 2.5rem;
+        /* ajusta como quiser */
+        width: auto;
+    }
+}

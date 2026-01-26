@@ -2,6 +2,7 @@ main article {
     min-height: 100vh;
 }
 
+
 /* FIRST SECTION - HOMEPAGE ------------------------------------------------- */
 #homepage {
     grid-template-rows: 15vh repeat(8, 1fr);
