@@ -75,32 +75,50 @@
 
 
 /* RESPONSIVIDADE ---------------------------------------------------------------------- */
+@media(max-width: 1480px), (max-height: 820px) {
+    /* Imagem */
+    .conteudo_violencia:nth-child(1) {
+        grid-row: 2 / span 3;
+    } 
+
+        /* Texto 1 */
+        .conteudo_violencia:nth-child(2) {
+            grid-column: 1 / 5;
+        }
+
+    /* Texto 2 e 3 */
+    .conteudo_violencia:nth-child(3),
+    .conteudo_violencia:nth-child(5) {
+        grid-row: 6 / span 2;
+    }
+
+    /* Links */
+    .conteudo_violencia:nth-child(4) {
+        grid-row: 7 / span 2;
+        grid-column: 1 / span 4;
+        align-self: center;
+    }
+
+    .conteudo_violencia div a {
+        line-height: 0rem;
+    }
+
+    /* Quote */
+    .conteudo_violencia:nth-child(6) {
+        grid-row: 5 / span 2;
+        align-self: center;
+    }
+}
+
+
 @media (max-width: 1650px) and (max-height: 800px) {
     /* Imagem */
     .conteudo_violencia:nth-child(1) {
         grid-row: 2 / span 3;
     }
 
-    /* Texto 1 */
-    .conteudo_violencia:nth-child(2) {
-        grid-column: 1 / 5;
-    }
-
     /* Texto 2 e 3 */
     .conteudo_violencia:nth-child(3), .conteudo_violencia:nth-child(5) {
         grid-row: 5 / span 4;
-    }
-
-    /* Links */
-    .conteudo_violencia:nth-child(4) {
-        grid-row: 7 / span 2;
-    }
-
-    .conteudo_violencia:nth-child(6) {
-        grid-row: 5 / span 3;
-    }
-
-    .conteudo_violencia div a {
-        line-height: 0rem;
     }
 }
