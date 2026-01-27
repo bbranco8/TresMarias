@@ -37,6 +37,10 @@ main article {
     bottom: 10vh;
 }
 
+#second_logo {
+    display: none;
+}
+
 #disclaimer {
     display: none;
 }
@@ -46,8 +50,16 @@ main article {
 
 @media (max-width: 890px) {
     .main_logo {
-        content: url("../LOGO/3marias_logo.png");
+        display: none;
+    }
+
+    #second_logo {
+        display: block;
         grid-column: 2 / span 4;
+        grid-row: 5;
+        mix-blend-mode: multiply;
+        align-self: center;
+        position: relative;
         bottom: 10%;
         width: 100%;
     }
