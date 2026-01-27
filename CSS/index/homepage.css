@@ -46,7 +46,7 @@ main article {
 
 @media (max-width: 890px) {
     .main_logo {
-        content: url("/LOGO/3m_logo.png");
+        content: url("../LOGO/3marias_logo.png");
         grid-column: 2 / span 4;
         bottom: 10%;
         width: 100%;
