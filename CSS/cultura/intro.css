@@ -57,6 +57,6 @@ main article {
 
 @media(max-height: 600px) {
     #artigo_intro h1 {
-            grid-column: 1 / 7;
+            grid-column: 1 / 8;
         }
 }
